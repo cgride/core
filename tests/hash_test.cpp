@@ -29,6 +29,7 @@ int main()
 
   {
     const auto value = cgride::core::hash_string("hello");
+    (void)value;
 
     assert(value == 0xa430d84680aabd0bULL);
     assert(cgride::core::hash_to_hex(value) == "a430d84680aabd0b");
@@ -57,6 +58,7 @@ int main()
         .update("cgride");
 
     const auto direct = cgride::core::hash_string("hello cgride");
+    (void)direct;
 
     assert(hasher.value() == direct);
   }
@@ -68,6 +70,9 @@ int main()
     const auto combined_a = cgride::core::combine_hash(first, second);
     const auto combined_b = cgride::core::combine_hash(first, second);
     const auto combined_c = cgride::core::combine_hash(second, first);
+    (void)combined_a;
+    (void)combined_b;
+    (void)combined_c;
 
     assert(combined_a == combined_b);
     assert(combined_a != combined_c);
