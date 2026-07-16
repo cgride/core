@@ -22,7 +22,7 @@ Cgride Core does not contain build planning, toolchain discovery, task execution
 ## Requirements
 
 - C++23
-- CMake 3.22 or newer
+- Vix CLI
 - Vix.cpp
 
 ## Build
@@ -43,20 +43,38 @@ vix tests
 vix build --preset release --build-target all
 ```
 
+## Build
+
+From the module directory, use the Vix workflow:
+
+```bash
+vix build
+```
+
+For a release build:
+
+```bash
+vix build --preset release
+```
+
+## Run tests
+
+```bash
+vix check --tests
+```
+
 ## Install
 
 ```bash
-vix build --build-target all
-sudo cmake --install build-ninja --prefix /usr/local
+vix install
 ```
 
-## CMake usage
+The install step exposes the `cgride::core` integration target, public headers, and package metadata.
 
-```cmake
-find_package(cgride-core CONFIG REQUIRED)
+## Integration
 
-target_link_libraries(my_tool PRIVATE cgride::core)
-```
+C++ integrations can use the installed module target from their project build configuration.
+
 
 ## Module boundary
 
