@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 project(
   cgride-core
-  VERSION 0.1.0
+  VERSION 0.1.1
   DESCRIPTION "Core types, results, errors, events, paths and utilities for Cgride."
   HOMEPAGE_URL "https://github.com/cgride/core"
   LANGUAGES CXX
